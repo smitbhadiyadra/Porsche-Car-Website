@@ -1,0 +1,384 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Montserrat:wght@300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+:root{
+    --Poppoins: 'Poppins', sans-serif;
+    --Montserrat: 'Montserrat', sans-serif;
+    --Ubuntu:  'Ubuntu', sans-serif;
+    --Allura: 'Allura', cursive;;
+    /* --theme: #F2D700; */
+    /* --theme--hover: #EFD880; */
+    --theme: #fff;
+    --theme--hover: #fbfbfb;
+    --bg--color: #121010b4;
+    --bg-box-color: #707070;
+
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--theme);
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: proximity;
+}
+
+body{
+    background: var(--bg--color);
+}
+
+body::-webkit-scrollbar{
+    display: block;
+    width: 5px;
+    background: var(--theme);
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: var(--theme--hover);
+    border-radius: 20px;
+}
+
+.cursor{
+    width: 18px;
+    height: 18px;
+    background-color: #f2d60065;
+    border-radius: 50%;
+    position: fixed;
+    z-index: 100;
+}
+
+.cursor-blur{
+    width: 400px;
+    height: 400px;
+    background-color: #f2d6001b;
+    border-radius: 50%;
+    position: fixed;
+    filter: blur(50px);
+    z-index: 9;
+}
+
+
+video{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    object-fit: cover;
+    z-index: -9;
+}
+
+.header{
+    font-family: var(--Ubuntu);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    position: fixed;
+    z-index: 11;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: transparent;
+    padding: 20px 7%;
+}
+
+.header .logo img{
+    width: 32px;
+    display: flex;
+}
+
+.header .nav a{
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 20px;
+    color: var(--theme);
+    transition: all ease .3s;
+}
+
+.header .nav a:hover,
+.header .nav a.active{
+    color: var(--theme--hover);
+}
+
+.header .social{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100px;
+    height: 40px;
+}
+
+.header .social a{
+    text-decoration: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    transition: all ease 0.1s;
+}
+
+.header .social a:hover {
+    border: 2px solid var(--theme--hover);
+}
+
+.header .social a i{
+    font-size: 20px;
+    color: var(--theme--hover);
+}
+
+.main{
+    position: relative;
+    background: rgb(0, 0, 0, 0.3);
+    z-index: 9;
+}
+
+.page1{
+    font-family: var(--Ubuntu);
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    z-index: 9;
+}
+
+.page1 h1{
+    font-size: 150px;
+    font-weight: 700;
+}
+
+.page1 h2{
+    font-size: 50px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--theme--hover);
+    text-transform: capitalize;
+}
+
+.page1 p{
+    width: 650px;
+    font-size: 16px;
+    color: var(--theme);
+    font-weight: 300;
+}
+
+.page2{
+    width: 100%;
+    height: 100vh;
+    z-index: 9;
+    font-family: var(--Poppoins);
+}
+
+.scroller{
+    white-space: nowrap;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.scroller .scroller-in{
+    display: inline-block;
+    white-space: nowrap;
+    animation-name: scroll;
+    animation-duration: 30s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+.scroller h4{
+    display: inline-block;
+    margin: 0px 15px;
+    font-size: 130px;
+    font-weight: 700;
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--theme);
+}
+
+.page2 h4{
+    transition: all ease .5s;
+
+}
+.page2 h4:hover{
+    -webkit-text-stroke: 1.5px var(--theme--hover);
+}
+
+@keyframes scroll {
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+.boxes{
+    width: 100%;
+    height: 70vh;
+    margin-top: 200px;
+    padding: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    position: relative;
+}
+
+.boxes .box{
+    width: 390px;
+    height: 200px;
+    background-color: var(--bg-box-color);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+}
+
+.boxes .box:hover img{
+    width: 650px;
+
+}
+
+.boxes .box:hover h3{
+    font-size: 100px;
+    top: 115px;
+}
+
+.boxes .box img{
+    width: 600px;
+    z-index: 9;
+    transition: .5s;
+}
+
+.boxes h2{
+    width: 100%;
+    position: absolute;
+    top: -20px;
+    font-size: 60px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.boxes::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 70px;
+    left: 0;
+    background: linear-gradient(45deg, var(--bg--color), var(--theme--hover), var(--bg--color));
+}
+
+.boxes .box h3{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 85px;
+    color: var(--theme--hover);
+    opacity: .5;
+    top: 135px;
+    font-family: var(--Allura);
+    font-weight: 600;
+    transition: .5s;
+
+}
+
+.page3{
+    width: 100%;
+    height: 170vh;
+    z-index: 10;
+    font-family: var(--Poppoins);
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+
+.about-718{
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 200px;
+    font-family: var(--Montserrat);
+}
+
+.details{
+    width: 42%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--bg-box-color);
+}
+
+.details h2{
+    margin-bottom: 30px;
+    margin-left: 80px;
+    font-size: 40px;
+    color: var(--bg--color);
+}
+
+.details p{
+    margin-left: 80px;
+    font-size: 18px;
+    width: 75%;
+    line-height: 26px;
+    color: var(--theme);
+    opacity: 0.8;
+}
+
+.about-718 img{
+    width: 59%;
+}
+
+.front{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+    background: url(images/718-bg.png);
+    background-repeat: no-repeat;
+}
+
+.front h2{
+    position: absolute;
+    top: 50vh;
+    left: 6vw;
+    font-size: 3vw;
+}
+
+.front p{
+    position: absolute;
+    top: 60vh;
+    left: 6vw;
+    width: 40vw;
+    font-size: 1vw;
+    margin-bottom: 10vh;
+    bottom: 10vh;
+}
+
+
+
+
+
+
+
+.page4{
+    width: 100%;
+    height: 100vh;
+    background: transparent;
+}
